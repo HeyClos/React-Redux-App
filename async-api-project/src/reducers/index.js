@@ -2,7 +2,7 @@ import {
     FETCH_FF_DATA_START,
     FETCH_FF_DATA_SUCCESS,
     FETCH_FF_DATA_FAILURE
-  } from './actions';
+  } from '../actions';
   
   const initialState = {
     characters: [],
@@ -25,6 +25,13 @@ import {
           isLoading: false,
           error: ''
         };
+        case FETCH_FF_DATA_FAILURE:
+            return {
+              ...state,
+              characters: null,
+              isLoading: false,
+              error: 'UH OH!'
+            };
       default:
         return state;
     }
